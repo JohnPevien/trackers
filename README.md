@@ -26,7 +26,7 @@ The Faker factories in `lib/fixtures/` use a fixed seed (`SEED = 424242`) so the
 
 ## Build phases
 
-This is a phase-N-per-PR project. Current branch: **`phase-1-frontend-scaffold`** (Phase 1, scaffold only). See `docs/phases.md` for the full roadmap.
+This is a phase-N-per-PR project. See `docs/phases.md` for the full roadmap. Current branch on this repo: **`phase-2a-supabase-schema`** (Phase 2a, schema + RLS only).
 
 ## Stack
 
@@ -34,7 +34,26 @@ This is a phase-N-per-PR project. Current branch: **`phase-1-frontend-scaffold`*
 - shadcn/ui (added component-by-component as needed)
 - Recharts (dashboard charts, Phase 6)
 - @faker-js/faker (mock data)
-- Supabase + Resend (added in Phase 2+)
+- Supabase (Postgres + Auth + Edge Functions + pg_cron)
+- Resend (transactional email)
+
+## Supabase CLI (Phases 2b+)
+
+Migrations live in `supabase/migrations/`. To apply them locally or push to your remote project:
+
+```bash
+# Install once: https://supabase.com/docs/guides/cli
+brew install supabase/tap/supabase   # macOS
+# or: npm i -g supabase
+# or: scoop install supabase         # Windows
+
+# Link to your remote project (after Phase 2b)
+supabase login
+supabase link --project-ref <your-project-ref>
+
+# Push migrations to remote
+supabase db push
+```
 
 ## Workflow
 

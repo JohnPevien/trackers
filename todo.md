@@ -7,6 +7,16 @@
 
 ## 1. Supabase
 
+### Install the Supabase CLI (Phase 2b needs this)
+
+```bash
+brew install supabase/tap/supabase   # macOS
+# or: npm i -g supabase
+# or: scoop install supabase         # Windows
+```
+
+### Create the project
+
 Create the project at https://supabase.com/dashboard (free tier is fine).
 
 | Variable | Where to find it | Value |
